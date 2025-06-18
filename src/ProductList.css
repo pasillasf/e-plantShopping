@@ -93,7 +93,9 @@ body {
 }
 
 .product-image {
-    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90vw; /* 50%;*/
     height: 200px; /* Adjust height for better consistency */
 }
 

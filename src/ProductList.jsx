@@ -55,13 +55,15 @@ function ProductList({ onHomeClick }) {
             plants: [
                 {
                     name: "Lavender",
-                    image: "https://images.unsplash.com/photo-1611909023032-2d6b3134ecba?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    image: "https://cdn.pixabay.com/photo/2016/01/02/00/42/lavender-1117275_1280.jpg",
+                    /*"https://images.unsplash.com/photo-1611909023032-2d6b3134ecba?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",*/
                     description: "Calming scent, used in aromatherapy.",
                     cost: "$20"
                 },
                 {
                     name: "Jasmine",
-                    image: "https://images.unsplash.com/photo-1592729645009-b96d1e63d14b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    image: "https://cdn.pixabay.com/photo/2018/09/18/22/10/jasmine-blue-3687453_960_720.jpg",
+                    /*"https://images.unsplash.com/photo-1592729645009-b96d1e63d14b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",*/
                     description: "Sweet fragrance, promotes relaxation.",
                     cost: "$18"
                 },
@@ -120,7 +122,8 @@ function ProductList({ onHomeClick }) {
                 },
                 {
                     name: "Lavender",
-                    image: "https://images.unsplash.com/photo-1611909023032-2d6b3134ecba?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    image: "https://cdn.pixabay.com/photo/2016/01/02/00/42/lavender-1117275_1280.jpg",
+                    /*"https://images.unsplash.com/photo-1611909023032-2d6b3134ecba?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",*/
                     description: "Calming scent, used in aromatherapy.",
                     cost: "$20"
                 },
@@ -178,7 +181,8 @@ function ProductList({ onHomeClick }) {
             plants: [
                 {
                     name: "ZZ Plant",
-                    image: "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    image: "https://cdn.pixabay.com/photo/2023/09/03/23/57/zamioculcas-zamiifolia-8231657_1280.jpg",
+                    /*"https://images.unsplash.com/photo-1632207691143-643e2a9a9361?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",*/
                     description: "Thrives in low light and requires minimal watering.",
                     cost: "$25"
                 },
@@ -296,15 +300,15 @@ function ProductList({ onHomeClick }) {
                         <div className="product-list"> {/* Container for the list of plant cards */}
                         {category.plants.map((plant, plantIndex) => ( // Loop through each plant in the current category
                             <div className="product-card" key={plantIndex}> {/* Unique key for each plant card */}
-                            <img 
-                                className="product-image" 
-                                src={plant.image} // Display the plant image
-                                alt={plant.name} // Alt text for accessibility
-                            />
+                            <div className="product-image"> 
+                                <img src={plant.image} // Display the plant image
+                                     alt={plant.name} // Alt text for accessibility
+                                />
+                            </div>
                             <div className="product-title">{plant.name}</div> {/* Display plant name */}
                             {/* Display other plant details like description and cost */}
                             <div className="product-description">{plant.description}</div> {/* Display plant description */}
-                            <div className="product-cost">${plant.cost}</div> {/* Display plant cost */}
+                            <div className="product-price">${plant.cost}</div> {/* Display plant cost */}
                             <button
                                 className="product-button"
                                 onClick={() => handleAddToCart(plant)} // Handle adding plant to cart
