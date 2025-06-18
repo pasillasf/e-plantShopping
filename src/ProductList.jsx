@@ -267,7 +267,10 @@ function ProductList({ onHomeClick }) {
           ...prevState, // Spread the previous state to retain existing entries
           [product.name]: true, // Set the current product's name as a key with value 'true' to mark it as added
         }));
+
       };
+
+      /*const isInCart = CartItem.some(item => item.name === product.name);*/
     
 
     return (
@@ -310,6 +313,11 @@ function ProductList({ onHomeClick }) {
                             <div className="product-description">{plant.description}</div> {/* Display plant description */}
                             <div className="product-price">${plant.cost}</div> {/* Display plant cost */}
                             <button
+                                /* code to disable button if in cart
+                                className={CartItem.} "product-button"  "".product-button.added-to-cart"
+                                className={isInCart ? "product-button.added-to-cart" : "product-button"}
+                                */
+                                
                                 className="product-button"
                                 onClick={() => handleAddToCart(plant)} // Handle adding plant to cart
                             >
