@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
 import './ProductList.css'
 import CartItem from './CartItem';
-import { addItem } from './CartSlice';
+import { addItem  } from './CartSlice';
+import cartReducer from './CartSlice';
+
 
 function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
